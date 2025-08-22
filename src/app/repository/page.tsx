@@ -10,6 +10,7 @@ import {
 } from '@/components/ui/card'
 import { AvailableIssueOps } from '@/lib/data'
 import { Category } from '@/lib/enums'
+import { getIssueCreationUrl } from '@/lib/utils'
 
 export default function Home() {
   const filteredIssueOps = AvailableIssueOps.filter(
@@ -36,7 +37,17 @@ export default function Home() {
                 <CardDescription>{issueOp.description}</CardDescription>
               </CardHeader>
               <CardContent className="mt-auto flex justify-end items-end">
-                <Button className="bg-blue-500 text-white py-2 px-4 rounded">
+                <Button
+                  className="bg-blue-500 text-white py-2 px-4 rounded"
+                  onClick={() =>
+                    window.open(
+                      getIssueCreationUrl({
+                        issueFormTemplate: issueOp.issueFormTemplate,
+                        labels: [issueOp.label, 'issue-ops']
+                      }),
+                      '_blank'
+                    )
+                  }>
                   Go
                 </Button>
               </CardContent>

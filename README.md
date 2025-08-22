@@ -21,6 +21,7 @@ scope of the operation:
 ## Get Started
 
 1. Fork this repository into an organization you manage.
+1. Enable Issues
 1. [Enable GitHub Pages](#enable-github-pages) in your forked repository.
 1. [Configure GitHub Actions](#configure-github-actions) in your forked
    repository.
