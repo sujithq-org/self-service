@@ -139,17 +139,17 @@ export default function Home() {
               </CardHeader>
               <CardContent className="mt-auto flex justify-end items-end">
                 <Button
-                  className="bg-blue-500 text-white py-2 px-4 rounded"
-                  onClick={() =>
-                    window.open(
-                      getIssueCreationUrl({
-                        issueFormTemplate: issueOp.issueFormTemplate,
-                        labels: [issueOp.label, 'issue-ops']
-                      }),
-                      '_blank'
-                    )
-                  }>
-                  Go
+                  asChild
+                  className="bg-blue-500 text-white py-2 px-4 rounded">
+                  <a
+                    href={getIssueCreationUrl({
+                      issueFormTemplate: issueOp.issueFormTemplate,
+                      labels: [issueOp.label, 'issue-ops']
+                    })}
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Go
+                  </a>
                 </Button>
               </CardContent>
             </Card>
